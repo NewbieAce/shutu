@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>辣椒价格</title>
+		<link rel="stylesheet" href="chilli_price.css" />
+		<script type="text/javascript" src="../JS/jquery-2.2.2.min.js"></script>
+
+	</head>
+		<style type="text/css">
+		* {
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑", "arial", " sans-serif";
+	font-size: 12px;
+	z-index: 2;
+}
+
+body {
+	/*background: rgb(238, 241, 247);*/
+	width: 750px;
+	/*height: 546px;*/
+	border: 1px blue solid;
+	overflow-x: hidden;
+}
+
+.clear {
+	clear: both;
+}
+
+img {
+	border: 0px;
+}
+
+ul,
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+	</style>
+
+	<body>
+		<div id="weekly_tab">
+
+			<div class="topRec_List">
+				<dl>
+					<dd>日期</dd>
+					<dd>品种</dd>
+					<dd>菜市场</dd>
+					<dd>最低价格</dd>
+					<dd>最高价格</dd>
+					<dd>平均价格</dd>
+					<dd>计量单位
+
+					</dd>
+				</dl>
+
+				<ul name="page">
+					<li>
+						<div>[2016-4-1]</div>
+						<div>辣椒1</div>
+						<div>巢湖市向阳菜市场</div>
+						<div>￥2.2</div>
+						<div>￥2.8</div>
+						<div>￥2.5</div>
+						<div>元/千克</div>
+					</li>
+					<li>
+						<div>[2016-4-1]</div>
+						<div>萝卜</div>
+						<div>巢湖市向阳菜市场</div>
+						<div>￥2.2</div>
+						<div>￥2.8</div>
+						<div>￥2.5</div>
+						<div>元/千克</div>
+					</li>
+					<li>
+						<div>[2016-4-1]</div>
+						<div>萝卜</div>
+						<div>巢湖市向阳菜市场</div>
+						<div>￥2.2</div>
+						<div>￥2.8</div>
+						<div>￥2.5</div>
+						<div>元/千克</div>
+					</li>
+					<li>
+						<div>[2016-4-1]</div>
+						<div>萝卜</div>
+						<div>巢湖市向阳菜市场</div>
+						<div>￥2.2</div>
+						<div>￥2.8</div>
+						<div>￥2.5</div>
+						<div>元/千克</div>
+					</li>
+					<li>
+						<div>[2016-4-1]</div>
+						<div>萝卜</div>
+						<div>巢湖市向阳菜市场</div>
+						<div>￥2.2</div>
+						<div>￥2.8</div>
+						<div>￥2.5</div>
+						<div>元/千克</div>
+					</li>
+					<li>
+						<div>[2016-4-1]</div>
+						<div>萝卜</div>
+						<div>巢湖市向阳菜市场</div>
+						<div>￥2.2</div>
+						<div>￥2.8</div>
+						<div>￥2.5</div>
+						<div>元/千克</div>
+					</li>
+					<li>
+						<div>[2016-4-1]</div>
+						<div>萝卜</div>
+						<div>巢湖市向阳菜市场</div>
+						<div>￥2.2</div>
+						<div>￥2.8</div>
+						<div>￥2.5</div>
+						<div>元/千克</div>
+					</li>
+					<li>
+						<div>[2016-4-1]</div>
+						<div>萝卜</div>
+						<div>巢湖市向阳菜市场</div>
+						<div>￥2.2</div>
+						<div>￥2.8</div>
+						<div>￥2.5</div>
+						<div>元/千克</div>
+					</li>
+					<li>
+						<div>[2016-4-1]</div>
+						<div>萝卜</div>
+						<div>巢湖市向阳菜市场</div>
+						<div>￥2.2</div>
+						<div>￥2.8</div>
+						<div>￥2.5</div>
+						<div>元/千克</div>
+					</li>
+					<li>
+						<div>[2016-4-1]</div>
+						<div>萝卜</div>
+						<div>巢湖市向阳菜市场</div>
+						<div>￥2.2</div>
+						<div>￥2.8</div>
+						<div>￥2.5</div>
+						<div>元/千克</div>
+					</li>
+					<li>
+						<div>[2016-4-1]</div>
+						<div>萝卜</div>
+						<div>巢湖市向阳菜市场</div>
+						<div>￥2.2</div>
+						<div>￥2.8</div>
+						<div>￥2.5</div>
+						<div>元/千克</div>
+					</li>
+					<li>
+						<div>[2016-4-1]</div>
+						<div>辣椒</div>
+						<div>巢湖市向阳菜市场</div>
+						<div>￥2.2</div>
+						<div>￥2.8</div>
+						<div>￥2.5</div>
+						<div>元/千克</div>
+					</li>
+
+				</ul>
+
+				<div id="show_price" style="float: right; margin: 10px 20px 0 0 ;">
+					<a href="###">上一页</a>
+					<a href="###">1</a>
+					<a href="###">2</a>
+					<a href="###">3</a>
+					<a href="###">4</a>
+					<a href="###">下一页</a>
+				</div>
+			</div>
+
+		</div>
+
+	</body>
+
+</html>

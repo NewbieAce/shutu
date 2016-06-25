@@ -1,0 +1,92 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑", "arial", " sans-serif";
+	font-size: 12px;
+	z-index: 2;
+}
+body{
+	/*border: 1px black solid;*/
+}
+
+.clear {
+	clear: both;
+}
+
+img {
+	border: 0px;
+}
+
+ul,
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+#wrap {
+	width: 1000px;
+	height: 602px;
+	margin: 20px auto;
+	overflow: hidden;
+
+	
+}
+
+#wrap_left {
+	width: 26%;
+	height: 580px;
+	/*border: 1px blue solid;*/
+	float: left;
+}
+
+#left_ul {
+	/*border: 1px red solid;*/
+	width: 205px;
+	height: 372px;
+	margin: 20px auto 0;
+}
+
+#left_ul li a{
+	font-size: 16px;
+	color: #2F364A;	
+	display: inline-block;
+	width: 100%;
+	margin:14px 0 0 50px;
+}
+
+#left_ul li:nth-child(1) a{
+	margin: 0;
+	font-size: 18px;
+	color: #143844;
+	text-align: center;
+}
+
+#left_ul li:nth-child(2) a{
+	margin-top: 22px;
+}
+
+#left_ul li:nth-child(2) a:hover,
+#left_ul li:nth-child(3) a:hover,
+#left_ul li:nth-child(4) a:hover,
+#left_ul li:nth-child(5) a:hover,
+#left_ul li:nth-child(6) a:hover,
+#left_ul li:nth-child(7) a:hover,
+#left_ul li:nth-child(8) a:hover {
+	color: #66B6FF;
+	cursor: pointer;
+}
+
+#wrap_right {
+	width: 72%;
+	height: 100%;
+	/*border: 1px black solid;*/
+	float: right;
+}
+#iframeH{
+	/*border: 1px blue solid;*/
+	width: 716px;
+	height: 100%;
+}

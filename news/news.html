@@ -1,0 +1,269 @@
+<!DOCTYPE >
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>新闻速递</title>
+		<link rel="stylesheet" href="news.css" />
+		<script type="text/javascript" src="../JS/jquery-2.2.2.min.js"></script>
+		<script type="text/javascript" src="JS/jquery.js"></script>
+		<script type="text/javascript" src="JS/osSlider.js"></script>
+		<script type="text/javascript" src="JS/jquery.svg3dtagcloud.min.js"></script>
+
+		<script>
+			//		翻页
+			$(function() {
+				var index = 0;
+				initLeft();
+				onload = function() {
+					var as = document.getElementById("left_page").getElementsByTagName("a");
+					var pages = document.getElementsByName("page");
+					for (var i = 0; i < as.length; i++) {
+						(function(i) {
+							as[i].onclick = function() {
+								var html = this.innerHTML.replace(/^\s+|\s+$/g, "") - 1;
+								html = i == 0 ? index - 1 : html;
+								html = i == as.length - 1 ? index + 1 : html;
+								html = html < 0 ? 0 : html;
+								html = html > pages.length - 1 ? pages.length - 1 : html;
+								pages[index].style.display = "none";
+								pages[html].style.display = "block";
+								index = html;
+							}
+						})(i);
+					}
+				}
+			});
+
+			function initLeft() {
+				var slider = new osSlider({ //开始创建效果
+					pNode: '.slider', //容器的选择器 必填
+					cNode: '.slider-main li', //轮播体的选择器 必填
+					speed: 3000, //速度 默认3000 可不填写
+					autoPlay: true //是否自动播放 默认true 可不填写
+				});
+			}
+		</script>
+
+	</head>
+
+	<body>
+		<div id="wrap">
+
+			<div id="wrap_left">
+				<ul name="page">
+					<li>
+						<img src="Img/a.jpg" />
+						<button class="left_btn">咨询速递</button>
+						<h1 class="left_h1">蒜商7000吨存蒜赚千万 “蒜你狠”是不是重整旗鼓</h1>
+						<p class="left_time">发布时间：2016/4/7 10:17:04 阅读：（252）</p>
+						<div class="left_p">“蒜你狠”沉寂四五年后，又有重整旗鼓之势。大蒜报价，从有的年份每斤不到一元到现在每斤6元多，不坚定崎岖不可谓不大。其间的要素，业内人士分析说，一是信息不对称，一点儿风吹草动都可能带来行情的无穷不坚定；据记者日前拜访全国大蒜集散地山东金乡时发现，大蒜报价本年又飙了。</div>
+					</li>
+					<li>
+						<img src="Img/b.jpg" />
+						<button class="left_btn">行情咨询</button>
+						<h1 class="left_h1">西红柿市场与产地价格行情走势</h1>
+						<p class="left_time">发布时间：2016/4/7 10:17:04 阅读：（252）</p>
+						<div class="left_p">全国84个市场西红柿批发均价为2.77元/斤，最低价1.45元/斤，最高价5.1元/斤，17个市场价格上涨，占比20%，22个市场价格下跌，占比26%。</div>
+					</li>
+					<li>
+						<img src="Img/c.jpg" />
+						<button class="left_btn">行情速递</button>
+						<h1 class="left_h1">一头大蒜2块多　蔬菜价格4月中下旬可能回落</h1>
+						<p class="left_time">发布时间：2016/4/7 10:17:04 阅读：（252）</p>
+						<div class="left_p">一棵六七斤重的大白菜要20多元钱，西兰花一斤要15元，拿着50块钱出门，买不了多少菜。今年春天，除了青萝卜等个别蔬菜价格维持低价位外，蔬菜价格整体居高不下。</div>
+					</li>
+					<li>
+						<img src="Img/d.jpg" />
+						<button class="left_btn">咨询速递</button>
+						<h1 class="left_h1">南京：八成蔬菜价涨了</h1>
+						<p class="left_time">发布时间：2016/4/7 10:17:04 阅读：（252）</p>
+						<div class="left_p">昨天，南京众彩商场发布了一份3月份的菜价计算，数据显现30个蔬菜监测种类均匀报价为6.42元/公斤，虽然比上个月均匀降低了0.2元/公斤，但和上一年同期比较，涨幅高达36%，洋葱的身价一年翻了两番多，洋白菜、莴笋、青</div>
+					</li>
+					<li>
+						<img src="Img/e.jpg" />
+						<button class="left_btn">咨询速递</button>
+						<h1 class="left_h1">茶陵有哪些特产?茶陵三宝有话说</h1>
+						<p class="left_time">发布时间：2016/4/7 10:17:04 阅读：（252）</p>
+						<div class="left_p">大蒜、生姜、白芷称之为茶陵三宝，在清明时期，被誉为贡品。茶陵大蒜是当地特色品种;另外二宝生姜、白芷也成为了当地重要的经济作物。</div>
+					</li>
+					<li>
+						<img src="Img/f.jpg" />
+						<button class="left_btn">咨询速递</button>
+						<h1 class="left_h1">中国惠农网上的人参果销售到国际</h1>
+						<p class="left_time">发布时间：2016/4/7 10:17:04 阅读：（252）</p>
+						<div class="left_p">豆纪波的人参果通过中国惠农网，卖到了香港特区，卖到了越南。香港的订单发货2万个，2元/个；越南50万个，2.7元/个，豆老板2015年的人参果利润就有15万元</div>
+					</li>
+					<li>
+						<img src="Img/g.jpg" />
+						<button class="left_btn">咨询速递</button>
+						<h1 class="left_h1">渐入暖春，绿叶蔬菜价格持续下跌</h1>
+						<p class="left_time">发布时间：2016/4/7 10:17:04 阅读：（252）</p>
+						<div class="left_p">随着气温的回升，小白菜、青菜、菠菜、芹菜、香菜、黄瓜这6种蔬菜跌幅都在10%以上。跌得最厉害的要数春笋、冬笋了，平均零售价分别为 13.39元、8.43元，分别下跌了27.8%、17.6%。</div>
+					</li>
+
+				</ul>
+
+				<ul name="page" style="display: none;">
+					<li>
+						<img src="Img/h.jpg" />
+						<button class="left_btn">咨询速递</button>
+						<h1 class="left_h1">近期鸡蛋价格行情分析</h1>
+						<p class="left_time">发布时间：2016/4/1 14:47:13 阅读：（264）</p>
+						<div class="left_p">近期鸡蛋价格市场较为混乱，各产区情况不一。虽然局部有所上涨，但清明节备货结束后，终端市场将对高价位货源的抵触，造成出货压力大，预计后续仍有地区相继下滑</div>
+					</li>
+					<li>
+						<img src="Img/i.jpg" />
+						<button class="left_btn">咨询速递</button>
+						<h1 class="left_h1">复合肥价格持续低迷 尿素价格上涨无济于事</h1>
+						<p class="left_time">发布时间：2016/4/1 12:25:26 阅读：（95）</p>
+						<div class="left_p">尿素价格最近上涨并没有推动复合肥报价上升。除了市场环境的影响外，种植结构调整对行情产生了消极作用。</div>
+					</li>
+					<li>
+						<img src="Img/j.jpg" />
+						<button class="left_btn">行情咨询</button>
+						<h1 class="left_h1">南京：八成蔬菜价涨了</h1>
+						<p class="left_time">发布时间：2016/4/7 10:17:04 阅读：（252）</p>
+						<div class="left_p">昨天，南京众彩商场发布了一份3月份的菜价计算，数据显现30个蔬菜监测种类均匀报价为6.42元/公斤，虽然比上个月均匀降低了0.2元/公斤，但和上一年同期比较，涨幅高达36%，洋葱的身价一年翻了</div>
+					</li>
+					<li>
+						<img src="Img/k.jpg" />
+						<button class="left_btn">行情速递</button>
+						<h1 class="left_h1">玉米价格形成机制推出:市场定价、价补分离</h1>
+						<p class="left_time">发布时间：2016/4/7 10:17:04 阅读：（252）</p>
+						<div class="left_p">“市场定价、价补分离。”我国玉米价格形成机制28日公布。国家发改委有关负责人在新闻通气会上表示，这是国家推进玉米收储制度改革的框架</div>
+					</li>
+					<li>
+						<img src="Img/l.jpg" />
+						<button class="left_btn">咨询速递</button>
+						<h1 class="left_h1">节后多地菜价不降反升 去年南方低温是推高菜价</h1>
+						<p class="left_time">发布时间：2016/4/7 10:17:04 阅读：（252）</p>
+						<div class="left_p">据报道，春节期间蔬菜价格会普遍上涨，但节后菜价就会逐渐恢复平稳。然而今年节后菜价却不降反升，和去年相比很多菜的价格都翻了一番。而且这次菜价不是个别品种价格暴涨，而是整体飙升</div>
+					</li>
+					<li>
+						<img src="Img/g.jpg" />
+						<button class="left_btn">咨询速递</button>
+						<h1 class="left_h1">渐入暖春，绿叶蔬菜价格持续下跌</h1>
+						<p class="left_time">发布时间：2016/4/7 10:17:04 阅读：（252）</p>
+						<div class="left_p">随着气温的回升，小白菜、青菜、菠菜、芹菜、香菜、黄瓜这6种蔬菜跌幅都在10%以上。跌得最厉害的要数春笋、冬笋了，平均零售价分别为 13.39元、8.43元，分别下跌了27.8%、17.6%。</div>
+					</li>
+					<li>
+						<img src="Img/m.jpg" />
+						<button class="left_btn">咨询速递</button>
+						<h1 class="left_h1">关于农村种植养殖的免税支持政策你知多少？</h1>
+						<p class="left_time">发布时间：2016/4/7 10:17:04 阅读：（252）</p>
+						<div class="left_p">从事种植，养殖的各位一定对政策扶持要有所了解。在农村种植养殖，对于增值税和营业税所得税，土地增值税等等国家基本免税</div>
+					</li>
+
+				</ul>
+				<ul name="page" style="display: none;">
+
+					<li>
+						<img src="Img/c.jpg" />
+						<button class="left_btn">行情速递</button>
+						<h1 class="left_h1">一头大蒜2块多　蔬菜价格4月中下旬可能回落</h1>
+						<p class="left_time">发布时间：2016/4/7 10:17:04 阅读：（252）</p>
+						<div class="left_p">一棵六七斤重的大白菜要20多元钱，西兰花一斤要15元，拿着50块钱出门，买不了多少菜。今年春天，除了青萝卜等个别蔬菜价格维持低价位外，蔬菜价格整体居高不下。</div>
+					</li>
+					<li>
+						<img src="Img/d.jpg" />
+						<button class="left_btn">咨询速递</button>
+						<h1 class="left_h1">南京：八成蔬菜价涨了</h1>
+						<p class="left_time">发布时间：2016/4/7 10:17:04 阅读：（252）</p>
+						<div class="left_p">昨天，南京众彩商场发布了一份3月份的菜价计算，数据显现30个蔬菜监测种类均匀报价为6.42元/公斤，虽然比上个月均匀降低了0.2元/公斤，但和上一年同期比较，涨幅高达36%，洋葱的身价一年翻了两番多，洋白菜、莴笋、青</div>
+					</li>
+					<li>
+						<img src="Img/e.jpg" />
+						<button class="left_btn">咨询速递</button>
+						<h1 class="left_h1">茶陵有哪些特产?茶陵三宝有话说</h1>
+						<p class="left_time">发布时间：2016/4/7 10:17:04 阅读：（252）</p>
+						<div class="left_p">大蒜、生姜、白芷称之为茶陵三宝，在清明时期，被誉为贡品。茶陵大蒜是当地特色品种;另外二宝生姜、白芷也成为了当地重要的经济作物。</div>
+					</li>
+
+					<li>
+						<img src="Img/b.jpg" />
+						<button class="left_btn">行情咨询</button>
+						<h1 class="left_h1">西红柿市场与产地价格行情走势</h1>
+						<p class="left_time">发布时间：2016/4/7 10:17:04 阅读：（252）</p>
+						<div class="left_p">全国84个市场西红柿批发均价为2.77元/斤，最低价1.45元/斤，最高价5.1元/斤，17个市场价格上涨，占比20%，22个市场价格下跌，占比26%。</div>
+					</li>
+					<li>
+						<img src="Img/f.jpg" />
+						<button class="left_btn">咨询速递</button>
+						<h1 class="left_h1">中国惠农网上的人参果销售到国际</h1>
+						<p class="left_time">发布时间：2016/4/7 10:17:04 阅读：（252）</p>
+						<div class="left_p">豆纪波的人参果通过中国惠农网，卖到了香港特区，卖到了越南。香港的订单发货2万个，2元/个；越南50万个，2.7元/个，豆老板2015年的人参果利润就有15万元</div>
+					</li>
+
+				</ul>
+				<div style="" id="left_page">
+					<a href="###">上一页</a>
+					<a href="###">1</a>
+					<a href="###">2</a>
+					<a href="###">3</a>
+					<a href="###">下一页</a>
+
+				</div>
+			</div>
+
+			<div id="wrap_right">
+				<div id="right_up">
+					<p>热门新闻</p>
+					<div class="slider">
+						<ul class="slider-main">
+							<li>
+								<img src="Img/right_a.jpg" alt="">
+							</li>
+							<li>
+								<img src="Img/right_b.jpg" alt="">
+							</li>
+							<li>
+								<img src="Img/right_c.jpg" alt="">
+							</li>
+							<li>
+								<img src="Img/right_d.jpg" alt="">
+							</li>
+						</ul>
+
+					</div>
+					<div id="right_a">
+						<ul>
+							<li><a>主席故里发展电商打造典型</a></li>
+							<li><a>中国现代农业“破茧”时刻（一）</a></li>
+							<li><a>高效、生态农业，也有着浓浓的地方特色</a></li>
+							<li><a>韶山太空农场，创意十足</a></li>
+							<li style="display: none;"><a>揭开韶峰茶的神秘面纱</a></li>
+							<li style="display: none;"><a>2016年农业政策会有哪些重大变化?</a></li>
+							<li style="display: none;"><a>2016年种植业工作要点</a></li>
+							<li style="display: none;"><a>“总裁助农”义卖麻橙，10小时10吨背后的故事</a></li>
+						</ul>
+
+					</div>
+					<div>
+						<img id="showMore" src="more.png" width="112px" height="30px" />
+					</div>
+					<script type="text/javascript">
+						$(document).ready(function() {
+							$("#showMore").click(function() {
+								$("#right_a ul li").css("display", "block");
+							});
+						});
+					</script>
+
+				</div>
+
+				<div id="right_down">
+					<p>热门新闻</p>
+					<div class="pic2"> <img src="Img/a.png" />
+						<img src="../Img/bg.png" />
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</body>
+
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<title>私人定制</title>
+		<link rel="stylesheet" href="personal.css" />
+		<script type="text/javascript" src="../JS/jquery-2.2.2.min.js"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=fofkFVBIXPsmyqpaXrEnyGLbG2CQMTMG"></script>
+	</head>
+
+	<body>
+		<div id="wrap">
+			<div id="wrap_left">
+				<p><img src="IMG/title.png"></p>
+				<ul id="personal_list">
+					<li>
+						<img src="IMG/01.jpg" width="30px"  height="30px"/>
+						<span>选择蔬菜品种：</span>
+						<select name="selectVal" id="selectVal_a">
+  						<optgroup label="椒类">  
+  							<option value="青椒">青椒</option> 
+    						<option value="二根条">二根条</option>  
+   						    <option value="朝天椒">朝天椒</option>  
+   						    <option value="红椒">红椒</option> 
+  						</optgroup>  
+  						<optgroup label="瓜类">  
+   							 <option value="黄瓜">黄瓜</option>  
+   							 <option value="冬瓜">冬瓜</option> 
+   							  <option value="佛手瓜">佛手瓜</option>  
+   							 <option value="南瓜">南瓜</option> 
+   							  <option value="丝瓜">丝瓜</option>  
+   							 <option value="苦瓜">苦瓜</option> 
+   							  <option value="西葫芦">西葫芦</option>  
+
+ 						 </optgroup>  
+ 					 	<optgroup label="豆类">  
+   							 <option value="土豆">土豆</option>  
+   							 <option value="豆腐">豆腐</option> 
+   							  <option value="绿豆芽">绿豆芽</option>  
+   							 <option value="黄豆芽">黄豆芽</option> 
+   							  <option value="青豇豆">青豇豆</option>  
+   							  <option value="四季豆">四季豆</option>  
+ 						 </optgroup>  
+ 						 
+ 						 <optgroup label="根茎类">  
+   							 <option value="胡萝卜">胡萝卜</option>  
+   							 <option value="萝卜">萝卜</option>   							  
+ 						 </optgroup> 
+ 						 <optgroup label="叶菜类">  
+   							 <option value="白菜">白菜</option>  
+   							 <option value="小葱">小葱</option> 
+   							 <option value="红薯尖">红薯尖</option>  
+   							 <option value="空心菜">空心菜</option> 
+   							 <option value="白菜">白菜</option>  
+   							 <option value="莴笋">莴笋</option>   							  
+ 						 </optgroup> 					
+ 						 <optgroup label="菌类">  
+   							 <option value="平菇">平菇</option>  
+   							 <option value="香菇">香菇</option> 
+   							 <option value="金针菇">金针菇</option>  
+   							 <option value="杏鲍菇">杏鲍菇</option> 
+  				  
+ 						 </optgroup>
+
+				    </select>
+
+					</li>
+					<li id="choose_list">
+						<img src="IMG/02.jpg" width="30px"  height="30px"/>
+						<span>您已经选择：</span><br/>
+					</li>
+					<li>
+					<img src="IMG/03.jpg" width="30px"  height="30px"/>
+					<span>个性化您的需求:</span>
+						<select>
+							<option value="">菜价最高</option>
+							<option value="">距离最近</option>
+							<option value="">交通最优</option>
+						</select>
+					</li>
+					<li>
+					<img src="IMG/04.jpg" width="30px"  height="30px"/>
+					<span><button>确认</button></span>
+					</li>
+					<li>
+					<img src="IMG/05.jpg" width="30px"  height="30px"/>
+					<span>为您推荐:</span>
+					</li>
+				</ul>
+				<script>
+					$(function() {
+						var x = 0;
+						//下拉框值发生改变会触发该事件
+						$("#selectVal_a").change(function() {
+							//获取到下拉框的值
+							var selecVal = $(this).val();
+							x++;
+							//添加文本框和删除按钮
+							$("#choose_list").append("<div id='choose_div'><span class='choose_span'style='	font-weight: 200;font-size: 16px;'>第" + x + "种蔬菜种类为:</span><input type='text' readonly='readonly' value='" + selecVal + "'></br><span class='choose_span'style='	font-weight: 200;font-size: 16px;'>重量为:</span><select><option value='1'>1kg~500kg</option><option value='2'>>500kg</option></select><button class='dele'>删除</button></div>");
+							//删除功能
+							$(".dele").click(function() {
+								//删除tr节点
+								$(this).parent().remove();
+								x--;
+								//禁止表单提交
+								return false;
+							});
+						})
+					});
+				</script>
+
+			</div>
+			<div id="wrap_right">
+				<div id="l-map"></div>
+				<div id="r-result"></div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			// 百度地图API功能
+			var map = new BMap.Map("l-map"); // 创建Map实例
+			map.centerAndZoom(new BMap.Point(117.27, 31.86), 11);
+			var myKeys = ["菜市场,农贸市场"];
+			var local = new BMap.LocalSearch(map, {
+				renderOptions: {
+					map: map,
+					panel: "r-result"
+				},
+				pageCapacity: 5
+			});
+			local.searchInBounds(myKeys, map.getBounds());
+		</script>
+	</body>
+
+</html>

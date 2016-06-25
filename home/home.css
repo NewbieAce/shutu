@@ -1,0 +1,179 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑", "arial", " sans-serif";
+	font-size: 12px;
+	z-index: 2;
+}
+
+body {
+	background: rgb(238, 241, 247);
+	/*background: aquamarine;*/
+}
+
+.clear {
+	clear: both;
+}
+
+img {
+	border: 0px;
+}
+
+ul {
+	list-style: none;
+}
+
+
+
+/*图片循环切换*/
+
+#wrap {
+	width: 1002px;
+	height: 860px;
+	min-height: 860px;
+	overflow: hidden;
+	margin: 50px auto 0;
+}
+
+#wrap ul {
+	list-style: none;
+	
+}
+
+.poster-main {
+	width: 1002px;
+	height: 480px;
+	position: relative;
+	margin: 0 auto 50px;
+	/*border: solid blue 1px;*/
+	background: #fff;
+}
+
+.poster-main a,
+.poster-main img {
+	display: block;
+}
+
+.poster-main .poster-list {
+	width: 1002px;
+	height: 500px;
+}
+
+.poster-main .poster-list .poster-item {
+	width: 200px;
+	height: 500px;
+	position: absolute;
+	left: 0px;
+	top: 0;
+}
+
+.poster-main .poster-btn {
+	position: absolute;
+	top: 0;
+	z-index: 10;
+	cursor: pointer;
+}
+
+.poster-main .poster-prev-btn {
+	left: 0;
+	background: url(Img/btn_left.png) no-repeat center center;
+}
+
+.poster-main .poster-next-btn {
+	right: 0;
+	background: url(Img/btn_right.png) no-repeat center center;
+}
+
+#view {
+	background: #fff;
+	height: 300px;
+}
+
+.view_p{
+	font-size: 20px;
+	width: 160px;
+	height: 40px;
+	color: #343844;
+	font-weight: bolder;
+	padding: 10px 0px 0px 20px;
+
+}
+/*可视化报表*/
+
+#view_report {
+	height: 300px;
+	width: 498px;
+	float: left;
+	position: relative;
+}
+
+#view_pic {
+	width: 498px;
+	height: 256px;
+	position: absolute;
+	left: 0px;
+	top: 60px;
+}
+
+.hand {
+	cursor: pointer;
+	_cursor: hand
+}
+
+.banner {
+	position:relative;
+	top: -14px;
+	height: 230px;
+	text-align: center;
+	background: url(Img/table_a.jpg) no-repeat center 0;
+
+}
+.bannerWrap {
+	width: 180px;
+	overflow: auto;
+	float: right;
+	padding-right: 20px;
+	
+}
+
+.bannerWrap ul.showList {
+	margin: 0 auto;
+	float: right;
+	position: absolute;
+	right:50px;
+	top: 170px;
+	z-index: 7;
+}
+
+.bannerWrap ul.showList li {
+	width: 23px;
+	height: 23px;
+	background: url(Img/circle1.png) no-repeat;
+	margin: 5px;
+	float: left;
+	color: #fff;
+	padding-top: 3px;
+	text-align: center;
+}
+
+.bannerWrap ul.showList li.special {
+	background: url(Img/circle1.png) no-repeat;
+	color: #048fd5
+}
+
+#view_way {
+	/*border: 1px black solid;*/
+	height: 300px;
+	width: 498px;
+	float: right;
+}
+#dituContent{
+	margin: 0 auto;
+	margin-top: -4px;
+}
+
+#foot {
+	height: 102px;
+	min-width: 1310px;
+	background: rgb(0, 117, 59);
+}

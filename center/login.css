@@ -1,0 +1,344 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑", "arial", " sans-serif";
+	font-size: 12px;
+	z-index: 2;
+}
+
+body {
+	background: rgb(238, 241, 247);
+	background: url(Img/bg.png) no-repeat;
+}
+
+.clear {
+	clear: both;
+}
+
+img {
+	border: 0px;
+}
+
+ul,
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+.login {
+	position: fixed;
+	top: 18%;
+	left: 36%;
+	width: 320px;
+	height: 484px;
+	background: white;
+	border-radius: 8px;
+	z-index: 100;
+	/*background:#AFEEEE;*/
+	background: #092BFF;
+}
+
+.login a:nth-child(1),
+.login a:nth-child(2) {
+	font-size: 18px;
+	float: left;
+	padding: 20px 0 0 50px;
+}
+
+.login a:nth-child(1) {
+	color: red;
+}
+
+.login a:nth-child(2) {
+	color: rgb(120, 125, 130);
+}
+
+.login a:nth-child(1):hover,
+.login a:nth-child(2):hover {
+	color: red;
+}
+
+.red {
+	color: red;
+}
+
+.close {
+	font-size: 36px;
+	/*float: right;*/
+	position: relative;
+	right: -100px;
+	top: 5px;
+	color: rgb(208, 208, 208);
+}
+
+#bg {
+	background-color: #000000;
+	/*background: url(Img/bg.png);*/
+	position: absolute;
+	z-index: 99;
+	left: 0;
+	top: 0;
+	display: none;
+	width: 100%;
+	height: 100%;
+	opacity: 0.9;
+	filter: alpha(opacity=90);
+	-moz-opacity: 0.9;
+}
+
+
+/*登录主界面*/
+
+#login_in {
+	border-top: 2px #ccc solid;
+	width: 100%;
+	height: 447px;
+	position: relative;
+	top: 15px;
+	background: snow;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+}
+
+#login_in ul li:nth-child(1),
+#login_in ul li:nth-child(2),
+#login_in ul li:nth-child(3),
+#login_in ul li:nth-child(4) {
+	text-align: center;
+}
+
+#login_in ul li:nth-child(1) input {
+	background: url(Img/user.png) no-repeat;
+	/*background-color: #858585;*/
+	padding-left: 50px;
+	margin-top: 30px;
+}
+
+#login_in ul li:nth-child(2) input {
+	background: url(Img/lock.png) no-repeat;
+	padding-left: 50px;
+	margin-top: 10px;
+	margin-top: 20px;
+}
+
+#login_in ul li:nth-child(1) input,
+#login_in ul li:nth-child(2) input {
+	background-color: transparent;
+	width: 180px;
+	height: 30px;
+}
+
+#login_in ul li:nth-child(3) input {
+	position: relative;
+	left: -5px;
+	top: 15px;
+}
+
+#login_in ul li:nth-child(3) span {
+	font-size: 14px;
+	color: rgb(102, 102, 102);
+	position: relative;
+	top: 13px;
+}
+
+#login_in ul li:nth-child(4) button {
+	margin-top: 40px;
+	background: rgb(114, 188, 110);
+	width: 98px;
+	height: 30px;
+	border: none;
+	border-radius: 5px;
+	color: snow;
+	font-size: 14px;
+	position: relative;
+	left: -110px;
+	top: -10px;
+}
+
+#login_in ul li:nth-child(4) span a {
+	font-size: 14px;
+	color: rgb(0, 0, 204);
+	position: relative;
+	left: 130px;
+	top: 16px;
+}
+
+#login_in ul li:nth-child(5) span {
+	font-size: 13px;
+	color: rgb(102, 102, 102);
+	position: relative;
+	left: 20px;
+	top: 30px;
+}
+
+#login_in ul li:nth-child(6) {
+	position: relative;
+	top: 100px;
+}
+
+#login_in ul li:nth-child(7) {
+	position: relative;
+	top: 110px;
+}
+
+#login_in ul li:nth-child(7) span {
+	color: #58A3D8;
+	position: relative;
+	left: 20px;
+}
+
+#login_in ul li:nth-child(7) input {
+	color: #3A90CD;
+	font-weight: bold;
+	position: relative;
+	top: 30px;
+	left: 30px;
+	width: 135px;
+	height: 30px;
+}
+
+#qq_logo {
+	position: relative;
+	left: -60px;
+	top: 90px;
+}
+
+#sina_logo {
+	position: relative;
+	left: -40px;
+	top: 90px;
+}
+
+#weixin_logo {
+	position: relative;
+	left: -20px;
+	top: 90px;
+}
+
+#register {
+	border-top: 2px #ccc solid;
+	width: 100%;
+	height: 420px;
+	position: relative;
+	top: 15px;
+	background: snow;
+	/*background: #C3C3C3;*/
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+}
+
+#register ul li:nth-child(1),
+#register ul li:nth-child(2),
+#register ul li:nth-child(3),
+#register ul li:nth-child(4),
+#register ul li:nth-child(6) {
+	text-align: center;
+}
+
+#register ul li:nth-child(1) input,
+#register ul li:nth-child(2) input,
+#register ul li:nth-child(3) input,
+#register ul li:nth-child(4) input {
+	background-color: transparent;
+	width: 180px;
+	height: 30px;
+}
+
+#register ul li:nth-child(1) input {
+	background: url(Img/mail.png) no-repeat;
+	padding-left: 50px;
+	margin-top: 30px;
+}
+
+#register ul li:nth-child(2) input {
+	/*background: url(Img/lock.png) no-repeat;*/
+	padding-left: 50px;
+	margin-top: 20px;
+}
+
+#register ul li:nth-child(3) input {
+	background: url(Img/lock.png) no-repeat;
+	padding-left: 50px;
+	margin-top: 20px;
+}
+
+#register ul li:nth-child(4) input {
+	background: url(Img/lock.png) no-repeat;
+	padding-left: 50px;
+	margin-top: 20px;
+}
+
+#register ul li:nth-child(6) button {
+	margin-top: 40px;
+	background: rgb(114, 188, 110);
+	width: 98px;
+	height: 30px;
+	border: none;
+	border-radius: 5px;
+	color: snow;
+	font-size: 14px;
+	/*position: relative;
+	left: 70px;
+	top: 0px;*/
+}
+
+/*验证码*/
+.code {
+	background: url(Img/code.jpg);
+	font-family: Arial;
+	font-style: italic;
+	color: blue;
+	font-size: 30px;
+	border: 0;
+	padding: 2px 3px;
+	letter-spacing: 3px;
+	font-weight: bolder;
+	float: left;
+	cursor: pointer;
+	width: 150px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	vertical-align: middle;
+}
+#form_code{
+	margin: 0;
+	padding: 0;
+}
+#form_code div table tr:nth-child(1) td:nth-child(1){
+	width: 50px;
+
+}
+#form_code div table tr:nth-child(1) td:nth-child(2){
+	width: 160px;
+
+}
+#form_code div table tr:nth-child(1) td:nth-child(3){
+	text-align: left;
+
+}
+#form_code div table tr:nth-child(1) td:nth-child(3) a{
+	color: blue;
+	font-size: 16px;
+	text-align: left;
+	padding-left: 2px;
+	padding-top: 42px;
+}
+#form_code div table tr:nth-child(2) td:nth-child(2) input{
+	margin-top: 10px;
+	height: 26px;
+	border-radius: 2px;
+	background: transparent;
+}
+#form_code div table tr:nth-child(2) td:nth-child(3) input{
+	border-radius: 3px;
+	color: snow;
+	width: 50px;
+	height: 28px;
+	margin-top: 10px;
+}
+
+

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="login.css" />
+		<script type="text/javascript" src="../JS/jquery-2.2.2.min.js">
+		</script>
+		<script type="text/javascript">
+			$(function() {
+				$(".close").click(function() {
+					$("#bg,.box").css("display", "none");
+				});
+				$(".close").mouseenter(function() {
+					$(".close").css("color", "red");
+					$(".close").css("cursor", "default")
+				});
+				//	点击登录按钮效果
+				$('#login_a').click(function() {
+					$("#login_a").css("color", "red");
+					$("#register_a").css("color", "rgb(120, 125, 130)");
+					$(".login").css("height", "484px");
+					$("#login_in").css("height", "447px");
+					$("#login_in").css("display", "block");
+					$("#register").css("display", "none");
+				});
+				//	点击注册按钮效果
+				$('#register_a').click(function() {
+					$("#register_a").css("color", "red");
+					$("#login_a").css("color", "rgb(120, 125, 130)");
+					$(".login").css("height", "304px");
+					$("#register").css("height", "420px");
+					$("#register").css("display", "block");
+					$("#login_in").css("display", "none");
+				});
+				//				点击立即注册帐号按钮效果
+				$('#register_b').click(function() {
+					$("#register_a").css("color", "red");
+					$("#login_a").css("color", "rgb(120, 125, 130)");
+					$(".login").css("height", "304px");
+					$("#register").css("height", "420px");
+					$("#register").css("display", "block");
+					$("#login_in").css("display", "none");
+				});
+			});
+			
+			 var code;
+        function createCode() {
+            code = "";
+            var codeLength = 6; //验证码的长度
+            var checkCode = document.getElementById("checkCode");
+            var codeChars = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+            'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',
+            'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'); //所有候选组成验证码的字符，当然也可以用中文的
+            for (var i = 0; i < codeLength; i++)
+            {
+                var charNum = Math.floor(Math.random() * 52);
+                code += codeChars[charNum];
+            }
+            if (checkCode)
+            {
+                checkCode.className = "code";
+                checkCode.innerHTML = code;
+            }
+        }
+        function validateCode()
+        {
+            var inputCode = document.getElementById("inputCode").value;
+            if (inputCode.length <= 0)
+            {
+                alert("请输入验证码！");
+            }
+            else if (inputCode.toUpperCase() != code.toUpperCase())
+            {
+                alert("验证码输入有误！");
+                createCode();
+            }
+            else
+            {
+                alert("验证码正确！");
+            }       
+        }   
+		</script>
+
+	</head>
+
+	<body onload="createCode()">
+		<form action="" method="post">
+			<div class="login box" style="">
+				<div>
+					<a id="login_a" >登录</a>
+					<a id="register_a">注册</a>
+					<a class="close">&times;</a>
+				</div>
+				<div id="login_in" class="login_z" style="display: block;">
+					<form method='post' action='#' name="">
+						<ul>
+							<li><input type="text" placeholder="请输入用户名" /></li>
+							<li><input type="password" placeholder="请输入密码" /></li>
+							<li><input type="checkbox" /><span>下次自动登录</span></li>
+							<li><span><a href="">忘记密码？</a></span><button>登录</button></li>
+							<li><span>可以使用以下方式登录</span>
+								<img id="qq_logo" src="Img/qq_logo.png" width="40px" height="40px">
+								<img id="sina_logo" src="Img/sina_logo.png" width="40px" height="40px">
+								<img id="weixin_logo" src="Img/weixin_logo.png" width="40px" height="40px">
+							</li>
+							<li>
+								<hr style="border:dashed 1px  rgb(178,203,227);" />
+							</li>
+							<li><span style="cursor: pointer;">没有帐号？</span><input type="button" id="register_b" value="立即注册帐号" /></li>
+						</ul>
+					</form>
+				</div>
+				<div id="register" style="display: none;">
+					<from method='post' action='#' name="">
+						<ul>
+							<li><input type="text" placeholder="请输入注册邮箱" /></li>
+							<li><input type="text" placeholder="请输入注册用户名" /></li>
+							<li><input type="password" placeholder="请设置密码"></li>
+							<li><input type="password" placeholder="请确认密码"></li>
+							<li>
+								
+									<form id="form_code" runat="server" onsubmit="validateCode()">
+										<div>
+											<table border="0" cellspacing="5" cellpadding="5">
+												<tr>
+													<td></td>
+													<td>
+														<div class="code" id="checkCode" onclick="createCode()"></div>
+													</td>
+													<td><a href="#" onclick="createCode()">换一换</a></td>
+												</tr>
+												<tr>
+													<td></td>
+													<td><input style="float:left;" type="text" placeholder="请输入验证码" id="inputCode" /></td>
+													<td><input id="Button" onclick="validateCode();" type="button" value="确定" /></td>
+												</tr>
+											</table>
+										</div>
+									</form>
+								
+							</li>
+							<li><button>注册</button></li>
+						</ul>
+					</from>
+				</div>
+			</div>
+		</form>
+
+	</body>
+
+</html>

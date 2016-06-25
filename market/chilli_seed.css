@@ -1,0 +1,33 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑", "arial", " sans-serif";
+	font-size: 12px;
+	z-index: 2;
+}
+
+body {
+	/*background: rgb(238, 241, 247);*/
+	width: 750px;
+	height: 546px;
+	border: 1px blue solid;
+	overflow-x: hidden;
+}
+
+.clear {
+	clear: both;
+}
+
+img {
+	border: 0px;
+}
+
+ul,
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+

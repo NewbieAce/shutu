@@ -1,0 +1,367 @@
+<!DOCTYPE >
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>蔬途--市场走向</title>
+		<link href="market.css" rel="stylesheet" />
+		<script type="text/javascript" src="../JS/jquery-2.2.2.min.js"></script>
+		<script src="JS/Bootstrap v3.2.0.js"></script>
+		<link rel="stylesheet" href="JS/bootstrap.min.css">
+		<script type="text/javascript" src="JS/price_list.js"></script>
+		<script type="text/javascript" src="JS/highcharts.js"></script>
+		<script type="text/javascript" src="JS/market_pic.js"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+		<jsp:useBean id="produce" class="com.wgh.Produce"></jsp:useBean>
+	</head>
+
+	<body>
+		<div id="wrap">
+			<div id="weekly">
+				<h1 class="class_h1">价格快讯</h1>
+				<div id="weekly_tab">
+
+					<div class="topRec_List">
+						<dl>
+							<dd>日期</dd>
+							<dd>品种</dd>
+							<dd>菜市场</dd>
+							<dd>最低价格</dd>
+							<dd>最高价格</dd>
+							<dd>平均价格</dd>
+							<dd>计量单位
+
+							</dd>
+						</dl>
+						<div class="maquee">
+							<ul>
+								<li>
+									<div>[2016-4-1]</div>
+									<div>萝卜青菜</div>
+									<div>巢湖市向阳菜市场</div>
+									<div>￥2.2</div>
+									<div>￥2.8</div>
+									<div>￥2.5</div>
+									<div>元/千克</div>
+								</li>
+								<li>
+									<div>[2016-4-1]</div>
+									<div>萝卜</div>
+									<div>巢湖市向阳菜市场</div>
+									<div>￥2.2</div>
+									<div>￥2.8</div>
+									<div>￥2.5</div>
+									<div>元/千克</div>
+								</li>
+								<li>
+									<div>[2016-4-1]</div>
+									<div>萝卜</div>
+									<div>巢湖市向阳菜市场</div>
+									<div>￥2.2</div>
+									<div>￥2.8</div>
+									<div>￥2.5</div>
+									<div>元/千克</div>
+								</li>
+								<li>
+									<div>[2016-4-1]</div>
+									<div>萝卜</div>
+									<div>巢湖市向阳菜市场</div>
+									<div>￥2.2</div>
+									<div>￥2.8</div>
+									<div>￥2.5</div>
+									<div>元/千克</div>
+								</li>
+								<li>
+									<div>[2016-4-1]</div>
+									<div>萝卜</div>
+									<div>巢湖市向阳菜市场</div>
+									<div>￥2.2</div>
+									<div>￥2.8</div>
+									<div>￥2.5</div>
+									<div>元/千克</div>
+								</li>
+								<li>
+									<div>[2016-4-1]</div>
+									<div>萝卜</div>
+									<div>巢湖市向阳菜市场</div>
+									<div>￥2.2</div>
+									<div>￥2.8</div>
+									<div>￥2.5</div>
+									<div>元/千克</div>
+								</li>
+								<li>
+									<div>[2016-4-1]</div>
+									<div>萝卜</div>
+									<div>巢湖市向阳菜市场</div>
+									<div>￥2.2</div>
+									<div>￥2.8</div>
+									<div>￥2.5</div>
+									<div>元/千克</div>
+								</li>
+								<li>
+									<div>[2016-4-1]</div>
+									<div>萝卜</div>
+									<div>巢湖市向阳菜市场</div>
+									<div>￥2.2</div>
+									<div>￥2.8</div>
+									<div>￥2.5</div>
+									<div>元/千克</div>
+								</li>
+								
+							</ul>
+						</div>
+
+					</div>
+
+					<script type="text/javascript">
+						function autoScroll(obj) {
+							$(obj).find("ul").animate({
+								marginTop: "-39px"
+							}, 500, function() {
+								$(this).css({
+									marginTop: "0px"
+								}).find("li:first").appendTo(this);
+							})
+						}
+						$(function() {
+							setInterval('autoScroll(".maquee")', 2000);
+						})
+					</script>
+
+				</div>
+				<div id="weekly_down">
+					<span id="weekly_span">说明：2016年04月10日报价</span>
+					<!--<button class="week_btn">查看更多价格</button>-->
+					<button class="week_btn " id="upPrice">我要报价</button>
+
+				</div>
+
+				<div class="modal fade" id="themodal" tabindex="-1">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+								<h4 class="modal-title"><img src="Img/price.png"/>
+									<span>欢迎您！</span>
+								</h4>
+							</div>
+							<div class="modal-body">
+								<p><span>谢谢您百忙之中愿意抽空为我们网站提供最新报价信息!</span>
+									<dl id="model_dl">
+										<dd><span>1、菜的品种</span><input type="text"></dd>
+										<dd><span>2、售卖地点</span><input type="text"></dd>
+										<dd><span>3、菜的价格</span><input type="text">&nbsp;&nbsp;<span>元/千克</span></dd>
+										<dd><span>4、本地菜市场最高价格</span><input type="text">&nbsp;&nbsp;<span>元/千克</span></dd>
+										<dd><span>5、本地菜市场最低价格</span><input type="text">&nbsp;&nbsp;<span>元/千克</span></dd>
+										<dd><span>6、本地菜市场平均价格</span><input type="text">&nbsp;&nbsp;<span>元/千克</span></dd>
+										<dd><span>7、补充说明</span><textarea style="width:273px ;height: 100px;"></textarea></dd>
+										<dd><span style="display:inline-block;margin-top: 22px;">在您的支持下，我们的网站会越做越好！</span></dd>
+									</dl>
+								</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+								<button type="button" class="btn btn-primary">保存</button>
+							</div>
+						</div>
+						<!-- /.modal-content -->
+					</div>
+					<!-- /.modal-dialog -->
+				</div>
+				<!-- /.modal -->
+
+				<script>
+					$(function() {
+						$("#upPrice").click(function() {
+							$("#themodal").modal({});
+						});
+					});
+				</script>
+
+			</div>
+
+			<div id="price">
+				<h1 class="class_h1">价格直通车</h1>
+				<div id="price_list">
+					<ul>
+						<li><span>椒类:</span>
+							<ul>
+								<li><a href="price.html"target="_blank">二根条</a></li>
+								<li><a href="price.html"target="_blank">青椒</a></li>
+								<li><a href="price.html"target="_blank">朝天椒</a></li>
+								<li><a href="price.html"target="_blank">红椒</a></li>
+							</ul>
+						</li>
+						<li><span>瓜类:</span>
+							<ul>
+								<li><a href="">黄瓜</a></li>
+								<li><a href="">冬瓜</a></li>
+								<li><a href="">佛手瓜</a></li>
+								<li><a href="">南瓜</a></li>
+								<li><a href="">丝瓜</a></li>
+								<li><a href="">苦瓜</a></li>
+								<li><a href="">西葫芦</a></li>
+							</ul>
+						</li>
+						<li><span>豆类:</span>
+							<ul>
+								<li><a href="">土豆</a></li>
+								<li><a href="">豆腐</a></li>
+								<li><a href="">绿豆芽</a></li>
+								<li><a href="">黄豆芽</a></li>
+								<li><a href="">青豇豆</a></li>
+								<li><a href="">四季豆</a></li>
+							</ul>
+						</li>
+						<li><span>根茎类:</span>
+							<ul>
+								<li><a href="">胡萝卜</a></li>
+								<li><a href="">萝卜</a></li>
+							</ul>
+						</li>
+						<li><span>叶菜类:</span>
+							<ul>
+								<li><a href="">白菜</a></li>
+								<li><a href="">小葱</a></li>
+								<li><a href="">红薯尖</a></li>
+								<li><a href="">空心菜</a></li>
+								<li><a href="">莴笋</a></li>
+							</ul>
+						</li>
+						<li><span>菌类:</span>
+							<ul>
+								<li><a href="">平菇</a></li>
+								<li><a href="">香菇</a></li>
+								<li><a href="">金针菇</a></li>
+								<li><a href="">杏鲍菇</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+
+			<div id="market">
+				<h1 class="class_h1">市场走势</h1>
+				<div id="market_list">
+					<select>  
+  						<optgroup label="椒类">  
+  							<option value="1">青椒</option> 
+    						<option value="2">二根条</option>  
+   						    <option value="3">朝天椒</option>  
+   						    <option value="4">红椒</option> 
+  						</optgroup>  
+  						<optgroup label="瓜类">  
+   							 <option value="">黄瓜</option>  
+   							 <option value="">冬瓜</option> 
+   							  <option value="">佛手瓜</option>  
+   							 <option value="">南瓜</option> 
+   							  <option value="">丝瓜</option>  
+   							 <option value="">苦瓜</option> 
+   							  <option value="">西葫芦</option>  
+
+ 						 </optgroup>  
+ 						 
+ 						 	<optgroup label="豆类">  
+   							 <option value="">土豆</option>  
+   							 <option value="">豆腐</option> 
+   							  <option value="">绿豆芽</option>  
+   							 <option value="">黄豆芽</option> 
+   							  <option value="">青豇豆</option>  
+   							  <option value="">四季豆</option>  
+ 						 </optgroup>  
+ 						 
+ 						 <optgroup label="根茎类">  
+   							 <option value="">胡萝卜</option>  
+   							 <option value="">萝卜</option>   							  
+ 						 </optgroup> 
+ 						 <optgroup label="叶菜类">  
+   							 <option value="">白菜</option>  
+   							 <option value="">小葱</option> 
+   							 <option value="">红薯尖</option>  
+   							 <option value="">空心菜</option> 
+   							 <option value="">白菜</option>  
+   							 <option value="">莴笋</option>   							  
+ 						 </optgroup> 					
+ 						 <optgroup label="菌类">  
+   							 <option value="">平菇</option>  
+   							 <option value="">香菇</option> 
+   							 <option value="">金针菇</option>  
+   							 <option value="">杏鲍菇</option> 
+   					
+   							  
+ 						 </optgroup>
+	 
+ 						 
+				    </select>
+
+				</div>
+				<div id="market_pic"></div>
+			</div>
+			<div id="area">
+				<h1 class="class_h1">地区行情</h1>
+				<div id="area_map">
+					<div>
+						<span>品种选择:</span>
+						<select>  
+  						<optgroup label="椒类">  
+  							<option value="1">青椒</option> 
+    						<option value="2">二根条</option>  
+   						    <option value="3">朝天椒</option>  
+   						    <option value="4">红椒</option> 
+  						</optgroup>  
+  						<optgroup label="瓜类">  
+   							 <option value="">黄瓜</option>  
+   							 <option value="">冬瓜</option> 
+   							  <option value="">佛手瓜</option>  
+   							 <option value="">南瓜</option> 
+   							  <option value="">丝瓜</option>  
+   							 <option value="">苦瓜</option> 
+   							  <option value="">西葫芦</option>  
+
+ 						 </optgroup>  
+ 						 
+ 						 	<optgroup label="豆类">  
+   							 <option value="">土豆</option>  
+   							 <option value="">豆腐</option> 
+   							  <option value="">绿豆芽</option>  
+   							 <option value="">黄豆芽</option> 
+   							  <option value="">青豇豆</option>  
+   							  <option value="">四季豆</option>  
+ 						 </optgroup>  
+ 						 
+ 						 <optgroup label="根茎类">  
+   							 <option value="">胡萝卜</option>  
+   							 <option value="">萝卜</option>   							  
+ 						 </optgroup> 
+ 						 <optgroup label="叶菜类">  
+   							 <option value="">白菜</option>  
+   							 <option value="">小葱</option> 
+   							 <option value="">红薯尖</option>  
+   							 <option value="">空心菜</option> 
+   							 <option value="">白菜</option>  
+   							 <option value="">莴笋</option>   							  
+ 						 </optgroup> 					
+ 						 <optgroup label="菌类">  
+   							 <option value="">平菇</option>  
+   							 <option value="">香菇</option> 
+   							 <option value="">金针菇</option>  
+   							 <option value="">杏鲍菇</option> 
+   					
+   							  
+ 						 </optgroup>
+	 
+ 						 
+				    </select>
+					</div>
+					<a href="">
+						<div style="width:420px;height:350px;border:#ccc solid 1px;" id="dituContent"></div>
+					</a>
+					<script type="text/javascript" src="JS/map.js"></script>
+				</div>
+			</div>
+
+		</div>
+	</body>
+
+</html>

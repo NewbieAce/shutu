@@ -1,0 +1,73 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑", "arial", " sans-serif";
+	font-size: 12px;
+	z-index: 2;
+}
+
+body {
+	/*background: rgb(238, 241, 247);*/
+	min-width:1002px;
+}
+
+.clear {
+	clear: both;
+}
+
+img {
+	border: 0px;
+}
+
+ul,
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+#aside{
+	margin-top: 12px;
+	width: 224px;
+	height: 408px;
+	border: 1px solid #DEDEDE;
+	border-radius: 5px;
+	float: left;
+}
+#aside>ul{
+	background: url(Img/chilli.png) no-repeat;
+	padding-top: 80px;
+}
+
+#aside>ul li{
+	margin: 12px 0 0px 26px;	
+	padding-bottom: 5px;
+	width: 169px;
+	border-bottom: 1px solid #E7E7E7;
+	background: url(Img/spread.png) no-repeat top right;
+}
+
+
+#aside>ul li a{
+	font-size:16px ;
+	color: #666;
+
+}
+#aside>ul li a:hover{
+	color: rgb(119,143,0);
+	font-weight: bold;
+
+}
+
+
+
+
+
+
+
+
+
+

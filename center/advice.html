@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>意见反馈</title>
+		<script src="../JS/jquery-2.2.2.min.js" type="text/javascript"></script>
+
+		<script type="text/javascript" charset="utf-8" src="u_editor/ueditor.config.js"></script>
+		<script type="text/javascript" charset="utf-8" src="u_editor/ueditor.all.min.js"></script>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				font-family: "微软雅黑", "arial", " sans-serif";
+				font-size: 14px;
+				z-index: 2;
+			}
+			
+			#editor {
+				margin-top: 16px;
+				width: 700px;
+				height: 640px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<p style="font-size: 18px;margin: 20px 0 10px 30px;">请在word中输入您的意见！</p>
+		<center>
+			<script id="editor" type="text/plain"></script>
+			<script type="text/javascript">
+				var ue = UE.getEditor('editor');
+			</script>
+		</center>
+	</body>
+
+</html>
